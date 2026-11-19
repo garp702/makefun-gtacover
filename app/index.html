@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palmera Heat — Cover Studio</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="topbar">
+  <div class="brand"><span class="brand-hot">PALMERA</span> <span class="brand-cool">HEAT</span> <span class="brand-sub">COVER STUDIO</span></div>
+  <p class="tagline">Your photos as a sunset crime-epic poster. Three steps, one PNG.</p>
+  <nav class="steps">
+    <span class="step active" id="step-photos"><b>1</b> Add photos</span>
+    <span class="step" id="step-layout"><b>2</b> Pick a layout</span>
+    <span class="step hot" id="step-export"><b>3</b> Export</span>
+  </nav>
+</header>
+<div id="workspace">
+  <aside id="photo-rail">
+    <h2>Photos</h2>
+    <button id="add-photos" class="cta">Add photos</button>
+    <input type="file" id="photo-input" accept="image/*" multiple hidden>
+    <button id="load-samples" class="rail-btn">Load samples</button>
+    <button id="auto-fill" class="rail-btn">Auto-fill panels</button>
+    <button id="shuffle-scenes" class="rail-btn">Shuffle scenes</button>
+    <div id="drop-hint">Drop photos here<br><em>never uploaded — read on your machine</em></div>
+    <div id="photo-tray"></div>
+    <p class="rail-note">Click a photo, then a panel — or drag it in. Every panel starts with studio key-art you can keep.</p>
+  </aside>
+  <main id="stage-wrap">
+    <canvas id="stage" width="1120" height="630"></canvas>
+    <div id="stage-bar">
+      <span id="selected-label">Panel 1 · Cover Star</span>
+      <label>Panel zoom <input type="range" id="panel-zoom" min="100" max="300" value="100"></label>
+      <button id="reset-crop" class="rail-btn small">Reset crop</button>
+      <span class="drag-hint">Drag to move · Scroll to zoom</span>
+    </div>
+  </main>
+  <aside id="control-rail">
+    <h2>Layout</h2>
+    <div id="layout-picker" class="picker"></div>
+    <h2>Grade</h2>
+    <div id="grade-picker" class="picker"></div>
+    <h2>Poster ink</h2>
+    <label class="row"><input type="checkbox" id="ink-toggle" checked> Halftone dots</label>
+    <label class="row">Bands <input type="range" id="band-slider" min="3" max="10" value="6" class="grow"></label>
+    <h2>Caption</h2>
+    <input id="title-input" class="text-in" value="PALMERA HEAT" maxlength="24">
+    <input id="subtitle-input" class="text-in script" value="Sundown Run" maxlength="30">
+    <input id="tagline-input" class="text-in" value="ONE NIGHT ON THE WATERFRONT" maxlength="40">
+    <label class="row"><input type="checkbox" id="badge-toggle" checked> “NEW” starburst badge</label>
+    <h2>Size</h2>
+    <div id="size-picker" class="picker"></div>
+    <button id="export-png" class="cta big">Export PNG</button>
+    <p class="rail-note" id="export-note">8 studio scenes ready. Pick a panel, drag to reframe it, then Export PNG.</p>
+  </aside>
+</div>
+<div id="shot-root" hidden></div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
